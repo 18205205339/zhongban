@@ -2,10 +2,10 @@ package org.fkit.ebuy.controller;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.fkit.ebuy.domain.Cart;
-import org.fkit.ebuy.domain.Collect;
 import org.fkit.ebuy.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -105,6 +105,34 @@ public class CartController {
 		// 跳转到cart页面
 		return "cart";
 	}
+	@RequestMapping(value="/insertproduct")
+	 public ModelAndView insertproduct(
+						String name,
+						String price, 
+						String descripts, 
+						String image,
+						String image2,
+						String image3,
+						String image4,
+						String image5,
+						String stock,
+						int sales,
+						int typeid,
+						
+					   ModelAndView mv ){
+	   Cart insertproduct  = cartService.insertproduct(name, price,descripts,image,image2,image3,image4,image5,stock,sales,typeid);
+		   if(insertproduct != null){
+				// 转发到loginForm请求
+				mv.setViewName("add");
+			}
+			else{
+				// 注册失败，设置失败提示信息，并跳转到注册页面
+				mv.addObject("message", "注册成功，请登录!");
+				mv.setViewName("add");
+			}
+			return mv;
+	 }
+	
 	
 	
 

@@ -32,6 +32,11 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		return cartMapper.findAll();
 	}
+	 @Override
+		public Cart insertproduct(String name,String price,String descripts,String image,String image2,String image3,String image4,String image5,String stock,int sales,int typeid ) {
+			// TODO Auto-generated method stub
+			return 	cartMapper.insertproduct(name, price,descripts,image,image2,image3,image4,image5,stock,sales,typeid);
+		}
 	
 	@Override
 	public Cart findCart(int product_id) {

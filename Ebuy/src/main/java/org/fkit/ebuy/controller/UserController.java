@@ -68,7 +68,7 @@ public class UserController {
 			// 登录成功，将user对象设置到HttpSession作用范围域
 			session.setAttribute("user", user);
 			// 转发到main请求
-			mv.setView(new RedirectView("/Ebuy/huawei"));
+			mv.setViewName("huawei");
 		}else{
 			// 登录失败，设置失败提示信息，并跳转到登录页面
 			mv.addObject("message", "登录名或密码错误，请重新输入!");

@@ -2,6 +2,7 @@ package org.fkit.ebuy.mapper;
 
 import java.util.List;
 
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Many;
@@ -52,6 +53,8 @@ public interface CartMapper {
 	    //删除商品
 	    @Delete("delete from cart where product_id=#{product_id}")
 		void removeCart(Cart cart);
-
-
+	    @Select("insert into product(name,price,descripts,image,image2,image3,image4,image5,stock,sales,typeid) values(#{name},#{price},#{descripts},#{image},#{image2},#{image3},#{image4},#{image5},#{stock},#{sales},#{typeid})")
+		Cart insertproduct(@Param("name")String name,@Param("price")String price,@Param("descripts")String descripts,@Param("image")String image,
+				@Param("image2")String image2,@Param("image3")String image3,@Param("image4")String image4,@Param("image5")String image5,
+				@Param("stock")String stock,@Param("sales")int sales,@Param("typeid")int typeid);
 }

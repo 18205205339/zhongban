@@ -30,15 +30,15 @@
         </property>
     </bean>
     
-      <!-- 定义Spring MVC的拦截器 -->
-    <mvc:interceptors>
-    	<mvc:interceptor>
-    		<!-- 拦截所有请求 -->
-    		<mvc:mapping path="/*"/>
-    		<!-- 自定义判断用户权限的拦截类 -->  
-    	 	<bean class="org.fkit.ebuy.interceptor.AuthorizationInterceptor"/>
-    	</mvc:interceptor>
-    </mvc:interceptors>
+<!--       定义Spring MVC的拦截器 -->
+<!--     <mvc:interceptors> -->
+<!--     	<mvc:interceptor> -->
+<!--     		拦截所有请求 -->
+<!--     		<mvc:mapping path="/*"/> -->
+<!--     		自定义判断用户权限的拦截类   -->
+<!--     	 	<bean class="org.fkit.ebuy.interceptor.AuthorizationInterceptor"/> -->
+<!--     	</mvc:interceptor> -->
+<!--     </mvc:interceptors> -->
     
      <bean id="multipartResolver"  
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
