@@ -199,7 +199,7 @@
     </div>
     <div class="col-md-2 col-sm-3 col-lg-2 col-xs-3">
     <a class="btn btn-info" href="saveorder?product_id=${product.id}" role="button">立即购买</a>
-    	<a href="saveorder?product_id"> <button class="btn btn-danger btn-lg ">立即购买</button>   </a>
+    	
     </div>
  </div>
 

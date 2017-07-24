@@ -156,86 +156,17 @@
 		</div>  
 		<div class="container">
    <h2>订单评价</h2>
-  <div class="row-fluid">
-		<div class="span4">
-		</div>
-		<div class="span4">
-			<form  action="insertproduct" method="post" >
-						<div class="control-group">
-							 <label class="control-label" for="order_number">订单号</label>
-							<div class="controls">
-								<input type="text" name="name" id="order_number" tabindex="1" class="form-control" placeholder="订单号" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="price">价格</label>
-							<div class="controls">
-								<input type="price" name="price" id="price" tabindex="" class="form-control" placeholder="价格">
-							</div>
-						</div>
-                        <div class="control-group">
-							 <label class="control-label" for="descripts">商品描述</label>
-							<div class="controls">
-								<input type="text" name="descripts" id="descripts" tabindex="1" class="form-control" placeholder="商品描述" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="image">image</label>
-							<div class="controls">
-								<input type="file" name="image" id="image" tabindex="1" class="form-control" placeholder="image" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="image">image2</label>
-							<div class="controls">
-								<input type="file" name="image2" id="image2" tabindex="1" class="form-control" placeholder="image2" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="image">image3</label>
-							<div class="controls">
-								<input type="file" name="image3" id="image3" tabindex="1" class="form-control" placeholder="image3" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="image">image4</label>
-							<div class="controls">
-								<input type="file" name="image4" id="image4" tabindex="1" class="form-control" placeholder="image4" >
-							</div>							
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="image">image5</label>
-							<div class="controls">
-								<input type="file" name="image5" id="image5" tabindex="1" class="form-control" placeholder="image5" >
-							</div>							
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="stock">库存</label>
-							<div class="controls">
-								<input type="text" name="stock" tabindex="1" class="form-control" placeholder="库存" >
-                                        </div>
-							</div>
-                        <div class="control-group">
-							 <label class="control-label" for="sales">销量</label>
-							<div class="controls">
-								<input type="text" name="sales" id="sales" tabindex="1" class="form-control" placeholder="销量" >
-							</div>
-						</div>
-						<div class="control-group">
-							 <label class="control-label" for="typeid">商品序号</label>
-							<div class="controls">
-								<input type="text" name="typeid" id="typeid" tabindex="1" class="form-control" placeholder="商品序号" >
-							</div>
-						</div>
-                       
-						
-						<div class="control-group">
-							<div class="controls">
-								  <button type="submit" class="btn btn-default btn-lg">立即添加</button>
-							</div>
-						</div>
-					</form>
-		</div>
+   <table class="table table-hover">
+                
+            <tr>
+			<th class="thtd">图片</th>
+			<th class="thtd">名称</th>
+			<th class="thtd">价格</th>
+			<th class="thtd">数量</th>
+			<th class="thtd"><font color="blue">购买</font></th>
+			<th class="thtd"><font color="black">减少数量</font></th>
+			<th class="thtd"><font color="red">删除</font></th>
+		    </tr>
 	  
            <c:forEach items="${requestScope.cart_list }" var="cart">
                 <c:forEach items="${cart.product }" var="product">
@@ -257,7 +188,7 @@
 		          </c:forEach>  
 	
 		</c:forEach>		
-      
+        </table>
  </div>
   <hr>
  <div class="container">

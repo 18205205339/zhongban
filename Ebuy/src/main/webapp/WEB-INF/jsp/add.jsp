@@ -176,5 +176,6 @@
 		</div>
 	</div>
 </div>
+<p class="footer-class">Copyright@利</p>
 </body>
 </html>
