@@ -1,77 +1,207 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8"> 
-	<title>评论</title>
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<html >
+
+    <head>
+        <meta charset="utf-8">
+        <title>用户评价</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Mobile Specific Meta  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,100' rel='stylesheet' type='text/css'>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style1.css" rel="stylesheet">
+        <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+            			<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>
+            <!--slider-script-->
+		<script src="js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+				  $("#slider1").responsiveSlides({
+					auto: true,
+					speed: 500,
+					namespace: "callbacks",
+					pager: true,
+				  });
+				});
+			</script>
+<!--//slider-script-->
+<script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+		});
+	});	  
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.alert-close1').on('click', function(c){
+		$('.message1').fadeOut('slow', function(c){
+	  		$('.message1').remove();
+		});
+	});	  
+});
+</script>      
 </head>
-<body>
-  <div class="container">
-  <div class="row"> 
-        <div class="col-md-10  col-sm-6"  > 
-           <a>易购欢迎你</a>
-        </div>
-        <div class="col-md-1 col-sm-3">
-             <a href="register"> 注册</a> 
-        </div> 
-        <div class="col-md-1 col-sm-3">
-             <a href="loginForm"> 登录</a> 
-        </div>
-   </div>              
+<body>                  
+            <div class="header-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-8">
+                            <div class="logo">
+                                <a href="loginForm"><img src="images/logoxin.png" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-6 hidden-xs">
+                            <div class="search-box">
+                                <form action="#">
+                                    <input class="form-control search-form" type="text" placeholder="search" />
+                                    <button class="search-button" value="Search" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header-in">
+						<div>当前在线人数：${applicationScope.count}</div>
+						 <div>${ sessionScope.user.username }</div>
+						 <a href ="main">注销</a>
+	  					</div>
+                        <div class="col-md-3 col-xs-4 col-sm-6">
+                            <div class="shopping-cart">
+                                <a class="cart" href="#" title="view shopping cart"><span class="hidden-xs"> <br><small></small></span></a>
+                                <div class="top-cart-content">
+                                    <div class="media header-middle-checkout">
+                                        <div class="media-left check-img">
+                                            <img src="images/login-xiaomi4.jpg" alt="" />
+                                        </div>
+                                        <div class="media-body checkout-content">
+                                            <h4 class="media-heading">
+                                                    <span class="cart-count">高配</span>
+                                                    <a href="#">小米4</a>
+                                                    <span class="btn-remove checkout-remove" title="remove this product from my cart"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                                </h4>
+                                            <p>￥2500</p>
+                                        </div>
+                                    </div>
+                                    <div class="media header-middle-checkout last-child">
+                                        <div class="media-left check-img">
+                                            <a href="#"><img src="images/login-oppor9s.jpg" alt="" /></a>
+                                        </div>
+                                        <div class="media-body checkout-content">
+                                            <h4 class="media-heading">
+                                                    <span class="cart-count">高配</span>
+                                                    <a href="#">oppoR9s</a>
+                                                    <span class="btn-remove checkout-remove" title="remove this product from my cart"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                                </h4>
+                                            <p>￥3500</p>
+                                        </div>
+                                    </div>
+                                    <div class="cart-total">
+                                        <span>Total</span>
+                                        <span><b>￥6000</b></span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
        
-        
-   </div> 
-   <hr>
- <div class="container">
-  　<div class="col-md-1">
-  　   <img src="images/图标.png" class="img-responsive" alt="">
-  　</div>
-   <div class="col-md-9">
-      	<div class="navbar navbar-default " role="navigation">
-             <ul class="nav nav-pills  nav-justified">
-                <li ><a href="main">网站首页</a></li>
-                <li><a href="shop">精选商城</a></li>
-                <li><a href="collection">我的收藏</a></li>
-                <li><a href="order">我的订单</a></li>
-             </ul>
-    	 </div>
-   </div>
-   <div class= "col-md-2">
-     	 <p><a href="cart.action?username=${ sessionScope.user.username }" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-home"></span> <strong>购物车</strong> </a>  </p>     
-    </div>
-   </div>
-  <hr>
+        <!-- slider-start -->
+<div class="main-menu-area hidden-xs hidden-sm">
+		<div class="container">
+			<div class="row">
+				<a class="toggleMenu" href="#">Menu</a>
+				<ul class="nav">
+												
+						<li><a href="huawei" >华为</a></li>            
+						<li><a href="oppo" >oppo</a></li>						  				 
+						<li><a href="xiaomi" >小米</a></li>
+						<li><a href="vivo" >vivo</a></li>
+						<li><a href="chuizi" >锤子</a></li>
+						<li><a href="collection.action?username=${ sessionScope.user.username }" >收藏列表</a></li>
+                		<li><a href="order">订单列表</a></li>
+                		<li><a href="cart.action?username=${ sessionScope.user.username }"  class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-home"></span> 购物车 </a>  </li>       
+						<li><a href="comment" >订单评价</a></li>
+					</ul>
+				<script type="text/javascript" src="js/nav.js"></script>
+			</div>
+		</div>
+		</div>  
  <form class="form-horizontal" action="submitcomment" method="post" >
  
  <div class="input-group input-group-lg">
      	<input name="pid" id="pid" type="hidden" value=""/>
      	${session.getAttribute(user).username}
      </div>
-  <div class="form-group">
-     <ul>
-                <li>商品质量:   <a class="text-danger"><input type="text" id ="quality" name ="quality" class="form-control" >分 </a></li>
-            	<li>卖家服务:   <a class="text-danger"><input type="text" id ="service" name="quality" class="form-control" >分 </a> </li>
-                <li>物流服务:   <a class="text-danger"><input type="text" id ="logistics" name ="quality" class="form-control" >分 </a></li>
-     </ul>
-   </div>
-   <div class="input-group input-group-lg">
-     	<input type="text" id="comments" name="comments" class="form-control"  style="width:600px;height:270px;">
-     </div>
-     <div class="input-group input-group-lg">
-    		 <label for="inputfile">添加图片</label>
-	    	 <input type="file" id="image1" name="image1" class="form-control" >
-	  </div>
-	  <div class="input-group input-group-lg">
-			<input type="submit" value="发表评论">
-	</div>
-</form>
+     <span class="title" for="logistica">物流</span>  
+   <div class="form-group">
+    <select class="form-control" name="logistica" id="logistica"> 
+      <option>1</option> 
+      <option>2</option> 
+      <option>3</option> 
+      <option>4</option> 
+      <option>5</option> 
+      </select>
+  </div>
+               
+          
+           
+  	<span class="title" for="quality">质量</span>  
+     <div class="form-group">
+    <select class="form-control"name="quality" id="quality"> 
+      <option>1</option> 
+      <option>2</option> 
+      <option>3</option> 
+      <option>4</option> 
+      <option>5</option> 
+      </select>
+  </div>
+
+        <span class="title" for="service">服务</span>  
+        <div class="form-group">
+    <select class="form-control" name="service" id ="service"> 
+      <option>1</option> 
+      <option>2</option> 
+      <option>3</option> 
+      <option>4</option> 
+      <option>5</option> 
+      </select>
+  </div>  
+  				
+  <span class="title" for="comments">用户评论</span> 
+     	<input type="text" id="comments" name="comments" class="form-control"  style="width:600px;height:35px;">
+    		<span class="title" for="image5">添加图片</span> 
+	    	 <input type="file" id="image5" name="image5" class="form-control" >
+              <button type="submit" class="btn btn-default btn-lg">添加评论</button>         
+        </form> 			
 
 </body>
 </html>

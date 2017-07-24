@@ -19,7 +19,7 @@ public interface CommentMapper {
 //	@Select(" select * from tb_comment ")
 //	List<Comment> findAll( int pid);
 	
-	@Select("insert into comment(service,logistics,quality,comments,image1) values(#{service},#{logistics},#{quality},#{comments},#{image1})")
+	@Select("insert into comment(comments,service,logistics,quality,image1) values(#{comments},#{service},#{logistics},#{quality},#{image1})")
 	Comment insertcomment(@Param("service")String service,@Param("logistics")String logistics,@Param("quality")String quality,
 			@Param("comments")String comments,@Param("image1")String image1);
 	

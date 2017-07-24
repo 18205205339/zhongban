@@ -109,7 +109,7 @@
 						<li><a href="collection.action?username=${ sessionScope.user.username }" >收藏列表</a></li>
                 		<li><a href="order">订单列表</a></li>
                 		<li><a href="cart.action?username=${ sessionScope.user.username }"  class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-home"></span> 购物车 </a>  </li>       
-						<li><a href="assessment.action?username=${ sessionScope.user.username }" >订单评价</a></li>
+						<li><a href="comment" >订单评价</a></li>
 					</ul>
 				<script type="text/javascript" src="js/nav.js"></script>
 			</div>

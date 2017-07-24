@@ -51,9 +51,15 @@ public class CommentController {
 					   ModelAndView mv,
 				     HttpSession session){
 	   Comment comment  = commentService.comment(service,logistics,quality,comments,image1);
-	     mv.setViewName("comment");
-			return mv;
-	
-	 }
-	
+	   if(comment != null){
+			// 转发到loginForm请求
+			mv.setViewName("comment");
+		}
+		else{
+			// 注册失败，设置失败提示信息，并跳转到注册页面
+			mv.addObject("message", "添加成功!");
+			mv.setViewName("huawei");
+		}
+		return mv;
+}
 }
