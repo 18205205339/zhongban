@@ -36,7 +36,7 @@ public class AdminController {
 		}else{
 			// 登录失败，设置失败提示信息，并跳转到登录页面
 			mv.addObject("message", "登录名或密码错误，请重新输入!");
-			mv.setViewName("add");
+			mv.setViewName("adminloginForm");
 		}
 		return mv;
 	}
